@@ -7,9 +7,6 @@
 
 import UIKit
 
-// Uncomment this code after you have created your character model.
-
-/*
 class CharacterController {
     static let jedi = [Character(name: "Anakin Skywalker", photo:                                   UIImage(named: "anakin"), faction: "Jedi"),
                          Character(name: "Obi Wan Kenobi", photo: UIImage(named: "obi"), faction: "Jedi"),
@@ -26,4 +23,3 @@ class CharacterController {
                        Character(name: "Kylo Ren", photo: UIImage(named: "ren"), faction: "Sith"),
                        Character(name: "Darth Sidious", photo: UIImage(named: "sidious"), faction: "Sith")]
 }
-*/
