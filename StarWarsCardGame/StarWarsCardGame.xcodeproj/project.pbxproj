@@ -14,6 +14,8 @@
 		7EDB74EC25AF34B500B80B7D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7EDB74EA25AF34B500B80B7D /* LaunchScreen.storyboard */; };
 		7EDB74FD25AF359500B80B7D /* PersonaController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EDB74FC25AF359500B80B7D /* PersonaController.swift */; };
 		E98990E126A9CC11000CD90A /* Persona.swift in Sources */ = {isa = PBXBuildFile; fileRef = E98990E026A9CC11000CD90A /* Persona.swift */; };
+		E98990E326A9D1D4000CD90A /* CardsCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E98990E226A9D1D4000CD90A /* CardsCollectionViewController.swift */; };
+		E98990E526A9D26B000CD90A /* FilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E98990E426A9D26B000CD90A /* FilterViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		7EDB74ED25AF34B500B80B7D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7EDB74FC25AF359500B80B7D /* PersonaController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonaController.swift; sourceTree = "<group>"; };
 		E98990E026A9CC11000CD90A /* Persona.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persona.swift; sourceTree = "<group>"; };
+		E98990E226A9D1D4000CD90A /* CardsCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsCollectionViewController.swift; sourceTree = "<group>"; };
+		E98990E426A9D26B000CD90A /* FilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +118,8 @@
 		E98990DE26A9CB02000CD90A /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				E98990E226A9D1D4000CD90A /* CardsCollectionViewController.swift */,
+				E98990E426A9D26B000CD90A /* FilterViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -196,10 +202,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E98990E526A9D26B000CD90A /* FilterViewController.swift in Sources */,
 				E98990E126A9CC11000CD90A /* Persona.swift in Sources */,
 				7EDB74E025AF34B500B80B7D /* AppDelegate.swift in Sources */,
 				7EDB74FD25AF359500B80B7D /* PersonaController.swift in Sources */,
 				7EDB74E225AF34B500B80B7D /* SceneDelegate.swift in Sources */,
+				E98990E326A9D1D4000CD90A /* CardsCollectionViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
