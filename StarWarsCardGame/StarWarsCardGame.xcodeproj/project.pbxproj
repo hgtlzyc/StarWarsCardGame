@@ -16,6 +16,7 @@
 		E98990E126A9CC11000CD90A /* Persona.swift in Sources */ = {isa = PBXBuildFile; fileRef = E98990E026A9CC11000CD90A /* Persona.swift */; };
 		E98990E326A9D1D4000CD90A /* CardsCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E98990E226A9D1D4000CD90A /* CardsCollectionViewController.swift */; };
 		E98990E526A9D26B000CD90A /* FilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E98990E426A9D26B000CD90A /* FilterViewController.swift */; };
+		E98990E826A9E668000CD90A /* PersonalCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E98990E726A9E668000CD90A /* PersonalCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		E98990E026A9CC11000CD90A /* Persona.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persona.swift; sourceTree = "<group>"; };
 		E98990E226A9D1D4000CD90A /* CardsCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsCollectionViewController.swift; sourceTree = "<group>"; };
 		E98990E426A9D26B000CD90A /* FilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterViewController.swift; sourceTree = "<group>"; };
+		E98990E726A9E668000CD90A /* PersonalCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +103,7 @@
 		7EDB74FA25AF355B00B80B7D /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				E98990E626A9E635000CD90A /* CustomCell */,
 				7EDB74F925AF355300B80B7D /* Storyboards */,
 			);
 			path = Views;
@@ -130,6 +133,14 @@
 				E98990E026A9CC11000CD90A /* Persona.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		E98990E626A9E635000CD90A /* CustomCell */ = {
+			isa = PBXGroup;
+			children = (
+				E98990E726A9E668000CD90A /* PersonalCollectionViewCell.swift */,
+			);
+			path = CustomCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -204,6 +215,7 @@
 			files = (
 				E98990E526A9D26B000CD90A /* FilterViewController.swift in Sources */,
 				E98990E126A9CC11000CD90A /* Persona.swift in Sources */,
+				E98990E826A9E668000CD90A /* PersonalCollectionViewCell.swift in Sources */,
 				7EDB74E025AF34B500B80B7D /* AppDelegate.swift in Sources */,
 				7EDB74FD25AF359500B80B7D /* PersonaController.swift in Sources */,
 				7EDB74E225AF34B500B80B7D /* SceneDelegate.swift in Sources */,

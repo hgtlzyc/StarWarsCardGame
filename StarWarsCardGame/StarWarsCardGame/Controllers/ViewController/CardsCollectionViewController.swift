@@ -10,17 +10,47 @@ import UIKit
 private let reuseIdentifier = "Cell"
 
 class CardsCollectionViewController: UICollectionViewController {
-
+    
+    var personaCards: [Persona] = []
+    var factionIsJedi: Bool = true
+    var targetPersona: Persona?
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        shuffleCards()
+    }
+    
+    func shuffleCards() {
+        
+        personaCards = []
+        
+        var targetFaction: [Persona] = []
+        var offTargetPersona: Persona?
+        
+        if factionIsJedi {
+            targetFaction = Array(PersonaController.jedi.shuffled().prefix(3))
+            offTargetPersona = PersonaController.sith.randomElement()
+        } else {
+            targetFaction = Array(PersonaController.sith.shuffled().prefix(3))
+            offTargetPersona = PersonaController.jedi.randomElement()
+        }
+        
+        personaCards.append(contentsOf: targetFaction)
+        targetPersona = personaCards.randomElement()
+        
+        if let offTargetPersona = offTargetPersona {
+            personaCards.append(offTargetPersona)
+        }
+        
+        personaCards.shuffle()
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Register cell classes
-        self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
-
-        // Do any additional setup after loading the view.
+        updateView()
+    }
+    
+    func updateView() {
+        title = targetPersona.map{ "Find \($0.name)" }
+        collectionView.reloadData()
     }
 
     /*
@@ -43,21 +73,35 @@ class CardsCollectionViewController: UICollectionViewController {
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of items
-        return 4
+        return personaCards.count
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "personaCell", for: indexPath)
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "personaCell", for: indexPath) as? PersonalCollectionViewCell else { return UICollectionViewCell() }
     
-        // Configure the cell
-        cell.backgroundColor = .blue
+        let persona = personaCards[indexPath.row]
+        
+        cell.displayImageFor(persona: persona)
+        cell.personaImageView.isUserInteractionEnabled = false
+        cell.isUserInteractionEnabled = true
     
         return cell
     }
 
     // MARK: UICollectionViewDelegate
+    
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let selectedPersona = personaCards[indexPath.row]
+        
+        let isCorrect = selectedPersona == targetPersona
+        
+        presentResultAlert(isCorrect)
+    }
+    
+    
 
 }//End Of VC
+
 
 extension CardsCollectionViewController: UICollectionViewDelegateFlowLayout {
     
@@ -81,3 +125,28 @@ extension CardsCollectionViewController: UICollectionViewDelegateFlowLayout {
     
     
 }//End Of Extension
+
+
+// MARK: - Alert
+extension CardsCollectionViewController {
+    func presentResultAlert(_ isCorrect: Bool){
+
+        let title = isCorrect ? "Good Job" : "Boooo"
+        let alert = UIAlertController(title: title, message: nil, preferredStyle: .alert)
+        
+        let doneAction = UIAlertAction(title: "Done", style: .default, handler: nil)
+        
+        let shuffleAction = UIAlertAction(title: "Shuffle", style: .default) { _ in
+            self.shuffleCards()
+        }
+        
+        if isCorrect {
+            alert.addAction(shuffleAction)
+        } else {
+            alert.addAction(doneAction)
+        }
+        
+        present(alert, animated: true)
+        
+    }
+}

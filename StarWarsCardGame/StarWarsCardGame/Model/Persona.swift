@@ -7,7 +7,7 @@
 
 import UIKit
 
-class Persona{
+class Persona {
     
     let name: String
     let photo: UIImage?
@@ -17,6 +17,13 @@ class Persona{
         self.name = name
         self.photo = photo
         self.faction = faction
+    }
+    
+}
+
+extension Persona: Equatable {
+    static func == (lhs: Persona, rhs: Persona) -> Bool {
+        return lhs.name == rhs.name && rhs.faction == rhs.faction
     }
     
 }
